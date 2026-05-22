@@ -1,0 +1,40 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/",                                               "destination": "/index.html" },
+    { "source": "/about",                                          "destination": "/about.html" },
+    { "source": "/how-we-protect-you",                             "destination": "/services.html" },
+    { "source": "/how-we-protect-you/asset-security",              "destination": "/asset-security.html" },
+    { "source": "/how-we-protect-you/office-concierge-security",   "destination": "/office-concierge-security.html" },
+    { "source": "/how-we-protect-you/manned-guarding",             "destination": "/manned-guarding.html" },
+    { "source": "/how-we-protect-you/close-protection",            "destination": "/close-protection.html" },
+    { "source": "/how-we-protect-you/security-consultant",         "destination": "/security-consultant.html" },
+    { "source": "/how-we-protect-you/property-management",         "destination": "/property-management.html" },
+    { "source": "/jet-set-travel",                                 "destination": "/jet-set-travel.html" },
+    { "source": "/contact",                                        "destination": "/contact.html" },
+    { "source": "/privacy-policy",                                 "destination": "/privacy-policy.html" },
+    { "source": "/terms-and-conditions",                           "destination": "/terms-and-conditions.html" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/404.html", "status": 404 }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(html|css|js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }
+      ]
+    }
+  ]
+}
