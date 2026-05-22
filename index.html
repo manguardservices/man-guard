@@ -583,6 +583,115 @@ h3{font-size:26px;line-height:1.12}
   .waLbl{display:none}
 }
 
+
+
+/* ═══════════════════════════
+   MOBILE IMAGE HEIGHT + DRAWER SUBMENU ANIMATION FIX
+   Keeps desktop untouched. Mobile images stay compact, while Darren's portrait keeps a taller natural portrait feel.
+═══════════════════════════ */
+@media(max-width:960px){
+  .svcPic{
+    height:290px!important;
+    min-height:290px!important;
+    padding-bottom:0!important;
+    margin-left:20px!important;
+    margin-right:20px!important;
+    width:auto!important;
+    overflow:hidden!important;
+  }
+  .svcPic img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+  .home-page .heroMobImg,
+  .home-page .splitPic,
+  .sCardImg,
+  div[style*="height:440px"],
+  div[style*="height:480px"]{
+    height:290px!important;
+    min-height:290px!important;
+    max-height:300px!important;
+    overflow:hidden!important;
+  }
+  div[style*="height:440px"] img,
+  div[style*="height:480px"] img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+  #darren div[style*="overflow:hidden"]{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  #darren img[alt*="Darren"]{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:3/4!important;
+    object-fit:cover!important;
+    object-position:center top!important;
+  }
+  .home-page #founder .splitPic{
+    height:410px!important;
+    min-height:410px!important;
+    max-height:440px!important;
+  }
+}
+@media(max-width:560px){
+  .svcPic,
+  .home-page .heroMobImg,
+  .home-page .splitPic,
+  .sCardImg,
+  div[style*="height:440px"],
+  div[style*="height:480px"]{
+    height:280px!important;
+    min-height:280px!important;
+    max-height:300px!important;
+  }
+  #darren div[style*="overflow:hidden"]{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  #darren img[alt*="Darren"]{
+    height:auto!important;
+    max-height:none!important;
+    aspect-ratio:3/4!important;
+  }
+  .home-page #founder .splitPic{
+    height:400px!important;
+    min-height:400px!important;
+    max-height:430px!important;
+  }
+}
+
+/* Mobile service submenu: fade/slide from right one-by-one when the drawer opens */
+.mobSubs a{
+  opacity:0!important;
+  transform:translateX(28px)!important;
+  transition:opacity .42s cubic-bezier(.22,1,.36,1), transform .42s cubic-bezier(.22,1,.36,1), color .18s!important;
+  will-change:opacity,transform;
+}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(1){opacity:1!important;transform:translateX(0)!important;transition-delay:.18s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(2){opacity:1!important;transform:translateX(0)!important;transition-delay:.24s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(3){opacity:1!important;transform:translateX(0)!important;transition-delay:.30s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(4){opacity:1!important;transform:translateX(0)!important;transition-delay:.36s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(5){opacity:1!important;transform:translateX(0)!important;transition-delay:.42s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(6){opacity:1!important;transform:translateX(0)!important;transition-delay:.48s!important}
+.mob:not(.on) .mobSubs a,
+.mobNavGroup:not(.open) .mobSubs a{
+  opacity:0!important;
+  transform:translateX(28px)!important;
+  transition-delay:0s!important;
+}
+
 </style>
 </head>
 <body>
@@ -702,7 +811,7 @@ h3{font-size:26px;line-height:1.12}
       </div>
       <div class="svcGrid">
         <div class="sCard rv">
-          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779360252137_5vazx5i.png" alt="Asset security professional building UK"></div>
+          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457098450_zioe0ok.webp" alt="Asset security professional building UK"></div>
           <div class="sCardBody">
             <div class="sCardIco ico"><svg viewBox="0 0 24 24"><path d="M12 2L4 6v6c0 5.25 3.5 9.74 8 10.93C16.5 21.74 20 17.25 20 12V6L12 2z"/><path d="M9 12l2 2 4-4"/></svg></div>
             <div class="sCardTitle">Peace of Mind for Your Assets</div>
@@ -711,7 +820,7 @@ h3{font-size:26px;line-height:1.12}
           </div>
         </div>
         <div class="sCard rv" data-d="1">
-          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779360248212_vjyb04b.webp" alt="Professional office reception security concierge"></div>
+          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457108904_wt0w8in.webp" alt="Professional office reception security concierge"></div>
           <div class="sCardBody">
             <div class="sCardIco ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/><path d="M14 8h1M14 12h1M14 16h1"/></svg></div>
             <div class="sCardTitle">A Safer Place to Work</div>
@@ -720,7 +829,7 @@ h3{font-size:26px;line-height:1.12}
           </div>
         </div>
         <div class="sCard rv" data-d="2">
-          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779360249116_lcvs6wh.webp" alt="Security monitoring surveillance control room"></div>
+          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457110357_vx9sr4o.webp" alt="Security monitoring surveillance control room"></div>
           <div class="sCardBody">
             <div class="sCardIco ico"><svg viewBox="0 0 24 24"><path d="M1 12S5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
             <div class="sCardTitle">Someone Always on Watch</div>
@@ -729,7 +838,7 @@ h3{font-size:26px;line-height:1.12}
           </div>
         </div>
         <div class="sCard rv" data-d="1">
-          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779360249865_12ma4rk.webp" alt="Close protection officer executive movement UK"></div>
+          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457114984_q4klot3.webp" alt="Close protection officer executive movement UK"></div>
           <div class="sCardBody">
             <div class="sCardIco ico"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="11" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/><circle cx="12" cy="16" r="1" fill="currentColor" stroke="none"/></svg></div>
             <div class="sCardTitle">You Move. We Protect.</div>
@@ -738,7 +847,7 @@ h3{font-size:26px;line-height:1.12}
           </div>
         </div>
         <div class="sCard rv" data-d="2">
-          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779360250670_kwdydar.webp" alt="Security risk assessment consultancy briefing"></div>
+          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457563957_13e6gr7.webp" alt="Security risk assessment consultancy briefing"></div>
           <div class="sCardBody">
             <div class="sCardIco ico"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v13a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12l2 2 4-4"/></svg></div>
             <div class="sCardTitle">Know Your Risks Before They Know You</div>
@@ -747,7 +856,7 @@ h3{font-size:26px;line-height:1.12}
           </div>
         </div>
         <div class="sCard rv" data-d="3">
-          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779360251419_sse2iin.webp" alt="Property management estate security UK"></div>
+          <div class="sCardImg"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457125720_xp0curo.webp" alt="Property management estate security UK"></div>
           <div class="sCardBody">
             <div class="sCardIco ico"><svg viewBox="0 0 24 24"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></div>
             <div class="sCardTitle">Your Property. Always Secure.</div>
@@ -863,8 +972,8 @@ h3{font-size:26px;line-height:1.12}
     <div class="splitGrid">
       <div class="splitPic picLight">
         <picture>
-          <source media="(max-width:960px)" srcset="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779360289659_ena2qk6.webp">
-          <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779360288490_qb31170.webp" alt="Luxury executive chauffeur vehicle airport transfer Man Guard Jet Set Travel">
+          <source media="(max-width:960px)" srcset="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457136920_4zrpkuq.webp">
+          <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457136920_4zrpkuq.webp" alt="Luxury executive chauffeur vehicle airport transfer Man Guard Jet Set Travel">
         </picture>
       </div>
       <div class="splitTxt jetTxt">

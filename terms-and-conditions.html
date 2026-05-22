@@ -462,6 +462,115 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
 [style*="grid-template-columns"]{min-width:0}
 @media(min-width:961px){[style*="grid-template-columns"]{align-items:stretch}[style*="grid-template-columns"]>div:has(img){align-self:stretch}[style*="grid-template-columns"]>div:has(img)>img,[style*="grid-template-columns"]>div:has(img) img{height:100%;object-fit:cover}}
 @media(max-width:960px){[style*="grid-template-columns"]{grid-template-columns:1fr!important;max-width:100%!important;min-width:0!important}[style*="grid-template-columns"]>*{min-width:0!important;max-width:100%!important}[style*="grid-template-columns"]>div:has(img){order:-1!important}[style*="grid-template-columns"]>div:has(img)>img,[style*="grid-template-columns"]>div:has(img) img{width:100%!important;max-width:100%!important;height:auto;object-fit:cover}.home-page [style*="grid-template-columns"]>div:has(img),#cta [style*="grid-template-columns"]>div:has(img){order:0!important}}
+
+
+/* ═══════════════════════════
+   MOBILE IMAGE HEIGHT + DRAWER SUBMENU ANIMATION FIX
+   Keeps desktop untouched. Mobile images stay compact, while Darren's portrait keeps a taller natural portrait feel.
+═══════════════════════════ */
+@media(max-width:960px){
+  .svcPic{
+    height:290px!important;
+    min-height:290px!important;
+    padding-bottom:0!important;
+    margin-left:20px!important;
+    margin-right:20px!important;
+    width:auto!important;
+    overflow:hidden!important;
+  }
+  .svcPic img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+  .home-page .heroMobImg,
+  .home-page .splitPic,
+  .sCardImg,
+  div[style*="height:440px"],
+  div[style*="height:480px"]{
+    height:290px!important;
+    min-height:290px!important;
+    max-height:300px!important;
+    overflow:hidden!important;
+  }
+  div[style*="height:440px"] img,
+  div[style*="height:480px"] img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+  #darren div[style*="overflow:hidden"]{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  #darren img[alt*="Darren"]{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:3/4!important;
+    object-fit:cover!important;
+    object-position:center top!important;
+  }
+  .home-page #founder .splitPic{
+    height:410px!important;
+    min-height:410px!important;
+    max-height:440px!important;
+  }
+}
+@media(max-width:560px){
+  .svcPic,
+  .home-page .heroMobImg,
+  .home-page .splitPic,
+  .sCardImg,
+  div[style*="height:440px"],
+  div[style*="height:480px"]{
+    height:280px!important;
+    min-height:280px!important;
+    max-height:300px!important;
+  }
+  #darren div[style*="overflow:hidden"]{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  #darren img[alt*="Darren"]{
+    height:auto!important;
+    max-height:none!important;
+    aspect-ratio:3/4!important;
+  }
+  .home-page #founder .splitPic{
+    height:400px!important;
+    min-height:400px!important;
+    max-height:430px!important;
+  }
+}
+
+/* Mobile service submenu: fade/slide from right one-by-one when the drawer opens */
+.mobSubs a{
+  opacity:0!important;
+  transform:translateX(28px)!important;
+  transition:opacity .42s cubic-bezier(.22,1,.36,1), transform .42s cubic-bezier(.22,1,.36,1), color .18s!important;
+  will-change:opacity,transform;
+}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(1){opacity:1!important;transform:translateX(0)!important;transition-delay:.18s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(2){opacity:1!important;transform:translateX(0)!important;transition-delay:.24s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(3){opacity:1!important;transform:translateX(0)!important;transition-delay:.30s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(4){opacity:1!important;transform:translateX(0)!important;transition-delay:.36s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(5){opacity:1!important;transform:translateX(0)!important;transition-delay:.42s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(6){opacity:1!important;transform:translateX(0)!important;transition-delay:.48s!important}
+.mob:not(.on) .mobSubs a,
+.mobNavGroup:not(.open) .mobSubs a{
+  opacity:0!important;
+  transform:translateX(28px)!important;
+  transition-delay:0s!important;
+}
+
 </style>
 </head>
 <body class="standard-page">

@@ -8,12 +8,12 @@
 <link rel="canonical" href="https://www.man-guard.co.uk/how-we-protect-you/security-consultant"/>
 <meta property="og:title" content="Security Consultant UK | Threat Assessment & Risk Profiling | Man Guard Security"/>
 <meta property="og:description" content="Expert security consultancy from ex-military professionals. Threat assessment, risk profiling and bespoke security strategy — UK-wide. Free initial assessment available."/>
-<meta property="og:image" content="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=70&sat=-80"/>
+<meta property="og:image" content="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457566625_v8tfo24.webp"/>
 <meta property="og:url" content="https://www.man-guard.co.uk/how-we-protect-you/security-consultant"/>
 <meta property="og:type" content="website"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Security Consultant UK | Threat Assessment & Risk Profiling | Man Guard Security"/>
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=70&sat=-80"/>
+<meta name="twitter:image" content="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457566625_v8tfo24.webp"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;1,300&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -490,6 +490,115 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
   .svcPic img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important}
 }
 
+
+
+/* ═══════════════════════════
+   MOBILE IMAGE HEIGHT + DRAWER SUBMENU ANIMATION FIX
+   Keeps desktop untouched. Mobile images stay compact, while Darren's portrait keeps a taller natural portrait feel.
+═══════════════════════════ */
+@media(max-width:960px){
+  .svcPic{
+    height:290px!important;
+    min-height:290px!important;
+    padding-bottom:0!important;
+    margin-left:20px!important;
+    margin-right:20px!important;
+    width:auto!important;
+    overflow:hidden!important;
+  }
+  .svcPic img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+  .home-page .heroMobImg,
+  .home-page .splitPic,
+  .sCardImg,
+  div[style*="height:440px"],
+  div[style*="height:480px"]{
+    height:290px!important;
+    min-height:290px!important;
+    max-height:300px!important;
+    overflow:hidden!important;
+  }
+  div[style*="height:440px"] img,
+  div[style*="height:480px"] img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+  #darren div[style*="overflow:hidden"]{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  #darren img[alt*="Darren"]{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:3/4!important;
+    object-fit:cover!important;
+    object-position:center top!important;
+  }
+  .home-page #founder .splitPic{
+    height:410px!important;
+    min-height:410px!important;
+    max-height:440px!important;
+  }
+}
+@media(max-width:560px){
+  .svcPic,
+  .home-page .heroMobImg,
+  .home-page .splitPic,
+  .sCardImg,
+  div[style*="height:440px"],
+  div[style*="height:480px"]{
+    height:280px!important;
+    min-height:280px!important;
+    max-height:300px!important;
+  }
+  #darren div[style*="overflow:hidden"]{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  #darren img[alt*="Darren"]{
+    height:auto!important;
+    max-height:none!important;
+    aspect-ratio:3/4!important;
+  }
+  .home-page #founder .splitPic{
+    height:400px!important;
+    min-height:400px!important;
+    max-height:430px!important;
+  }
+}
+
+/* Mobile service submenu: fade/slide from right one-by-one when the drawer opens */
+.mobSubs a{
+  opacity:0!important;
+  transform:translateX(28px)!important;
+  transition:opacity .42s cubic-bezier(.22,1,.36,1), transform .42s cubic-bezier(.22,1,.36,1), color .18s!important;
+  will-change:opacity,transform;
+}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(1){opacity:1!important;transform:translateX(0)!important;transition-delay:.18s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(2){opacity:1!important;transform:translateX(0)!important;transition-delay:.24s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(3){opacity:1!important;transform:translateX(0)!important;transition-delay:.30s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(4){opacity:1!important;transform:translateX(0)!important;transition-delay:.36s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(5){opacity:1!important;transform:translateX(0)!important;transition-delay:.42s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(6){opacity:1!important;transform:translateX(0)!important;transition-delay:.48s!important}
+.mob:not(.on) .mobSubs a,
+.mobNavGroup:not(.open) .mobSubs a{
+  opacity:0!important;
+  transform:translateX(28px)!important;
+  transition-delay:0s!important;
+}
+
 </style>
 </head>
 <body class="sub-service-page">
@@ -564,7 +673,7 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
 <!-- SUB-PAGE HERO -->
 <section class="spHero" aria-label="Security Consultant hero">
   <div class="spHeroBg">
-    <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779448699444_fh6wcrc.webp" alt="Man Guard security consultant reviewing threat assessment site plans boardroom UK" loading="eager">
+    <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457566625_v8tfo24.webp" alt="Man Guard security consultant reviewing threat assessment site plans boardroom UK" loading="eager">
   </div>
   <div class="spHeroIn">
     <div class="ey eyD rv">Security Consultant</div>
@@ -594,11 +703,11 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
 <section style="background:var(--off)"><div class="sf"><div style="padding:96px 0">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start" class="rv">
 <div><div class="ey" style="margin-bottom:16px">What Is Security Consultant</div><h2 style="color:var(--dark);margin-bottom:24px">You Cannot Protect Against Risks You Cannot See.</h2><p class="bd" style="margin-bottom:16px">Security consultancy is the process of understanding exactly where you are vulnerable — before anyone else finds out.</p><p class="bd" style="margin-bottom:16px">Most businesses and individuals assume their current setup is adequate. They install cameras, add alarms and assume the job is done. It almost never is.</p><p class="bd" style="margin-bottom:16px">Man Guard's security consultants are former military and law enforcement professionals who assess your true risk profile and give you a clear, honest picture of where you stand — and exactly what to do about it.</p><div style="display:flex;flex-direction:column;gap:10px;margin-top:24px"><div style="display:flex;gap:12px;font-size:15px;color:#3a4a58;align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>Comprehensive site and operational security audit</div><div style="display:flex;gap:12px;font-size:15px;color:#3a4a58;align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>Full threat assessment specific to your profile and environment</div><div style="display:flex;gap:12px;font-size:15px;color:#3a4a58;align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>Written recommendations prioritised by risk level and urgency</div><div style="display:flex;gap:12px;font-size:15px;color:#3a4a58;align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>Implementation support available</div></div></div>
-<div style="overflow:hidden;height:460px"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779448700977_r0og9e2.webp" alt="Man Guard security consultant reviewing threat assessment site plans boardroom UK" style="width:100%;height:100%;object-fit:cover;object-position:center" loading="lazy"></div>
+<div style="overflow:hidden;height:460px"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457565581_qplvu9u.webp" alt="Man Guard security consultant reviewing threat assessment site plans boardroom UK" style="width:100%;height:100%;object-fit:cover;object-position:center" loading="lazy"></div>
 </div></div></div></section>
 <section style="background:var(--dark)"><div class="sfD"><div style="padding:96px 0">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
-<div class="rv" style="overflow:hidden;height:440px"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779448702346_1ra0s5j.webp" alt="Security risk assessment corporate UK threat analysis Man Guard consultant" style="width:100%;height:100%;object-fit:cover;object-position:center" loading="lazy"></div>
+<div class="rv" style="overflow:hidden;height:440px"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457563957_13e6gr7.webp" alt="Security risk assessment corporate UK threat analysis Man Guard consultant" style="width:100%;height:100%;object-fit:cover;object-position:center" loading="lazy"></div>
 <div class="rv" data-d="1"><div class="ey eyG" style="margin-bottom:16px">The Threat Is Real</div><h2 style="color:var(--off);margin-bottom:24px">Most Security Gaps Are Not Found Until After an Incident.</h2><p style="font-size:16px;line-height:1.65;color:rgba(247,246,242,.56);margin-bottom:16px">The uncomfortable truth is that most organisations are significantly more vulnerable than they believe. Not because they are negligent — because most security reviews are conducted by people with an interest in selling you more equipment.</p><p style="font-size:16px;line-height:1.65;color:rgba(247,246,242,.56);margin-bottom:16px">Man Guard consultants have no products to sell. We give you honest, operational advice — because that is the only thing that actually makes you safer.</p><div style="display:flex;flex-direction:column;gap:10px;margin-top:24px"><div style="display:flex;gap:12px;font-size:15px;color:rgba(247,246,242,.7);align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>Most break-ins exploit vulnerabilities that were obvious in hindsight</div><div style="display:flex;gap:12px;font-size:15px;color:rgba(247,246,242,.7);align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>Insider threat is the most underestimated risk in most organisations</div><div style="display:flex;gap:12px;font-size:15px;color:rgba(247,246,242,.7);align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>Technology alone creates a false sense of security</div><div style="display:flex;gap:12px;font-size:15px;color:rgba(247,246,242,.7);align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>Compliance with regulations does not mean you are actually secure</div></div></div>
 </div></div></div></section>
 <section style="background:var(--off)"><div class="sf"><div style="padding:96px 0">

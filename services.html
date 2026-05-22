@@ -480,6 +480,115 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
   .services-page #hero h1{font-size:28px!important;line-height:1.18!important}
 }
 
+
+
+/* ═══════════════════════════
+   MOBILE IMAGE HEIGHT + DRAWER SUBMENU ANIMATION FIX
+   Keeps desktop untouched. Mobile images stay compact, while Darren's portrait keeps a taller natural portrait feel.
+═══════════════════════════ */
+@media(max-width:960px){
+  .svcPic{
+    height:290px!important;
+    min-height:290px!important;
+    padding-bottom:0!important;
+    margin-left:20px!important;
+    margin-right:20px!important;
+    width:auto!important;
+    overflow:hidden!important;
+  }
+  .svcPic img{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    min-height:0!important;
+    object-fit:cover!important;
+    object-position:center!important;
+  }
+  .home-page .heroMobImg,
+  .home-page .splitPic,
+  .sCardImg,
+  div[style*="height:440px"],
+  div[style*="height:480px"]{
+    height:290px!important;
+    min-height:290px!important;
+    max-height:300px!important;
+    overflow:hidden!important;
+  }
+  div[style*="height:440px"] img,
+  div[style*="height:480px"] img{
+    width:100%!important;
+    height:100%!important;
+    object-fit:cover!important;
+  }
+  #darren div[style*="overflow:hidden"]{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  #darren img[alt*="Darren"]{
+    width:100%!important;
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    aspect-ratio:3/4!important;
+    object-fit:cover!important;
+    object-position:center top!important;
+  }
+  .home-page #founder .splitPic{
+    height:410px!important;
+    min-height:410px!important;
+    max-height:440px!important;
+  }
+}
+@media(max-width:560px){
+  .svcPic,
+  .home-page .heroMobImg,
+  .home-page .splitPic,
+  .sCardImg,
+  div[style*="height:440px"],
+  div[style*="height:480px"]{
+    height:280px!important;
+    min-height:280px!important;
+    max-height:300px!important;
+  }
+  #darren div[style*="overflow:hidden"]{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+  }
+  #darren img[alt*="Darren"]{
+    height:auto!important;
+    max-height:none!important;
+    aspect-ratio:3/4!important;
+  }
+  .home-page #founder .splitPic{
+    height:400px!important;
+    min-height:400px!important;
+    max-height:430px!important;
+  }
+}
+
+/* Mobile service submenu: fade/slide from right one-by-one when the drawer opens */
+.mobSubs a{
+  opacity:0!important;
+  transform:translateX(28px)!important;
+  transition:opacity .42s cubic-bezier(.22,1,.36,1), transform .42s cubic-bezier(.22,1,.36,1), color .18s!important;
+  will-change:opacity,transform;
+}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(1){opacity:1!important;transform:translateX(0)!important;transition-delay:.18s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(2){opacity:1!important;transform:translateX(0)!important;transition-delay:.24s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(3){opacity:1!important;transform:translateX(0)!important;transition-delay:.30s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(4){opacity:1!important;transform:translateX(0)!important;transition-delay:.36s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(5){opacity:1!important;transform:translateX(0)!important;transition-delay:.42s!important}
+.mob.on .mobNavGroup.open .mobSubs a:nth-child(6){opacity:1!important;transform:translateX(0)!important;transition-delay:.48s!important}
+.mob:not(.on) .mobSubs a,
+.mobNavGroup:not(.open) .mobSubs a{
+  opacity:0!important;
+  transform:translateX(28px)!important;
+  transition-delay:0s!important;
+}
+
 </style>
 </head>
 <body class="services-page">
@@ -619,7 +728,7 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
       <a class="btn btnL" href="asset-security.html">Protect Your Assets Today <i><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></i></a>
     </div>
     <div class="svcPic picFbD rv" data-d="1">
-      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779360252137_5vazx5i.png" alt="SIA licensed asset security guard protecting corporate environment UK Man Guard" loading="lazy">
+      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457098450_zioe0ok.webp" alt="SIA licensed asset security guard protecting corporate environment UK Man Guard" loading="lazy">
     </div>
   </div></div>
 </section>
@@ -628,7 +737,7 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
 <section aria-label="Office and Concierge Security">
   <div class="sfD0"><div class="svcSplit bgC">
     <div class="svcPic picFbD rv">
-      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779450345034_h83eh4o.webp" alt="Professional SIA licensed office concierge security officer at corporate reception desk" loading="lazy">
+      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457108904_wt0w8in.webp" alt="Professional SIA licensed office concierge security officer at corporate reception desk" loading="lazy">
     </div>
     <div class="svcTxt rt rv" data-d="1">
       <div class="svcNum">Service 02</div>
@@ -665,7 +774,7 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
       <a class="btn btnL" href="manned-guarding.html">Get a Guard on Your Site <i><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></i></a>
     </div>
     <div class="svcPic picFbD rv" data-d="1">
-      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779450344169_h6xw9if.webp" alt="Man Guard manned guarding officer at commercial premises entrance UK" loading="lazy">
+      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457110357_vx9sr4o.webp" alt="Man Guard manned guarding officer at commercial premises entrance UK" loading="lazy">
     </div>
   </div></div>
 </section>
@@ -674,7 +783,7 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
 <section aria-label="Close Protection">
   <div class="sfD0"><div class="svcSplit bgC">
     <div class="svcPic picFbD rv">
-      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779448124507_1q4thl4.jpeg" alt="Man Guard close protection officer bodyguard escorting VIP through London street" loading="lazy">
+      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457114984_q4klot3.webp" alt="Man Guard close protection officer bodyguard escorting VIP through London street" loading="lazy">
     </div>
     <div class="svcTxt rt rv" data-d="1">
       <div class="svcNum">Service 04</div>
@@ -711,7 +820,7 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
       <a class="btn btnL" href="security-consultant.html">Book Your Security Assessment <i><svg class="arw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></i></a>
     </div>
     <div class="svcPic picFbD rv" data-d="1">
-      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779450342783_gu8cdue.webp" alt="Man Guard security consultant reviewing threat assessment and site plans at boardroom UK" loading="lazy">
+      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457563957_13e6gr7.webp" alt="Man Guard security consultant reviewing threat assessment and site plans at boardroom UK" loading="lazy">
     </div>
   </div></div>
 </section>
@@ -720,7 +829,7 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
 <section aria-label="Property Management Security">
   <div class="sfD0"><div class="svcSplit bgC">
     <div class="svcPic picFbD rv">
-      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779450340934_gjt763n.webp" alt="Man Guard officer conducting patrol at residential and commercial property UK" loading="lazy">
+      <img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457125720_xp0curo.webp" alt="Man Guard officer conducting patrol at residential and commercial property UK" loading="lazy">
     </div>
     <div class="svcTxt rt rv" data-d="1">
       <div class="svcNum">Service 06</div>
