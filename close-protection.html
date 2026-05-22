@@ -99,6 +99,20 @@ h3{font-size:26px;line-height:1.12}
 .logo{flex-shrink:0}
 .logoN{font-family:var(--serif);font-size:20px;line-height:1;color:var(--off)}
 .logoS{font-family:var(--mono);font-size:7.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,246,242,.36);margin-top:4px}
+.logo{flex-shrink:0;display:inline-flex;align-items:center}
+.logoImg{display:block;width:auto;height:42px;max-width:188px;object-fit:contain}
+.ftLogo{display:block;width:auto;height:54px;max-width:220px;object-fit:contain;margin-bottom:16px}
+@media(max-width:760px){
+  .logoImg{height:36px;max-width:170px}
+  .mobTop .logoImg{height:38px;max-width:180px}
+  .ftLogo{height:48px;max-width:210px;margin-bottom:16px}
+}
+@media(max-width:420px){
+  .logoImg{height:34px;max-width:162px}
+  .mobTop .logoImg{height:36px;max-width:172px}
+  .ftLogo{height:44px;max-width:200px}
+}
+
 .navLinks{display:flex;gap:0;align-items:center;margin-left:auto}
 .navLinks>a,.navLinks>.navDrop>a{font-size:13px;color:rgba(247,246,242,.62);transition:.18s;white-space:nowrap;padding:0 12px;height:var(--navH);display:inline-flex;align-items:center}
 .navLinks>a:hover,.navLinks>.navDrop>a:hover{color:var(--off)}
@@ -607,8 +621,7 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
 <div class="mob" id="mob">
   <div class="mobTop">
     <a class="logo" href="index.html" onclick="mC()">
-      <div class="logoN">Man Guard®</div>
-      <div class="logoS">Security Services UK Ltd</div>
+      <img class="logoImg" src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779461907195_gcxlcyy.svg" alt="Man Guard Security Services UK Ltd logo">
     </a>
     <button class="mobX" onclick="mC()" aria-label="Close menu">×</button>
   </div>
@@ -642,8 +655,7 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
 <header id="nav">
   <div class="navIn">
     <a class="logo" href="index.html">
-      <div class="logoN">Man Guard®</div>
-      <div class="logoS">Security Services UK Ltd</div>
+      <img class="logoImg" src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779461907195_gcxlcyy.svg" alt="Man Guard Security Services UK Ltd logo">
     </a>
     <nav class="navLinks">
       <a href="index.html">Home</a>
@@ -703,7 +715,7 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
 <section style="background:var(--off)"><div class="sf"><div style="padding:96px 0">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start" class="rv">
 <div><div class="ey" style="margin-bottom:16px">What Is Close Protection</div><h2 style="color:var(--dark);margin-bottom:24px">A Bodyguard Is the Last Line of Defence. A Man Guard CPO Is the First.</h2><p class="bd" style="margin-bottom:16px">Close protection is not reactive guarding. It is proactive, intelligence-led security that identifies and eliminates threats before they ever reach you.</p><p class="bd" style="margin-bottom:16px">A Man Guard close protection officer has operated in some of the most demanding environments in the world. They do not wait for threats to materialise — they eliminate the conditions that allow threats to exist.</p><p class="bd" style="margin-bottom:16px">Discreet enough that no one knows they are there. Capable enough that nothing can get through.</p><div style="display:flex;flex-direction:column;gap:10px;margin-top:24px"><div style="display:flex;gap:12px;font-size:15px;color:#3a4a58;align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>Advance work — venues, routes and environments assessed before you arrive</div><div style="display:flex;gap:12px;font-size:15px;color:#3a4a58;align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>Threat assessment built around your profile, movements and exposure</div><div style="display:flex;gap:12px;font-size:15px;color:#3a4a58;align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>Discreet or visible presence — built entirely around your preference</div><div style="display:flex;gap:12px;font-size:15px;color:#3a4a58;align-items:flex-start"><span style="color:var(--gold);flex-shrink:0">●</span>UK and international deployment — wherever your life takes you</div></div></div>
-<div style="overflow:hidden;height:460px"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457114984_q4klot3.webp" alt="Man Guard close protection officer CPO bodyguard VIP escort UK street" style="width:100%;height:100%;object-fit:cover;object-position:center" loading="lazy"></div>
+<div style="overflow:hidden;height:460px"><img src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779457123889_ztyu0za.webp" alt="Man Guard close protection officer CPO bodyguard VIP escort UK street" style="width:100%;height:100%;object-fit:cover;object-position:center" loading="lazy"></div>
 </div></div></div></section>
 <section style="background:var(--dark)"><div class="sfD"><div style="padding:96px 0">
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
@@ -791,8 +803,7 @@ form,input,select,textarea{max-width:100%;min-width:0}input,select,textarea{font
   <div class="ftWrap">
     <div class="ftTop">
       <div>
-        <div class="ftN">Man Guard®</div>
-        <div class="ftSub">Security Services UK Ltd</div>
+        <img class="ftLogo" src="https://nejyjogwbbubeqkrgqat.supabase.co/storage/v1/object/public/claudedrop-images/uploads/1779461907195_gcxlcyy.svg" alt="Man Guard Security Services UK Ltd logo">
         <div class="ftBadge">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C6A24A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 6v6c0 5.25 3.5 9.74 8 10.93C16.5 21.74 20 17.25 20 12V6L12 2z"/><polyline points="9,12 11,14 15,10"/></svg>
           <span>SIA Licensed Officers</span>
