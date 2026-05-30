@@ -88,5 +88,5 @@ The contact form on `contact.html` uses a **placeholder** Formspree endpoint.
 Man Guard Security Services UK Ltd  
 📞 08007 999 200  
 📱 07534 980288  
-✉ dpendleton@manguardservices.co.uk  
+✉ info@man-guard.co.uk  
 🌐 www.man-guard.co.uk
